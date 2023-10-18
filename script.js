@@ -6,6 +6,26 @@
 //Write filterByGenre(books, genre) below here:
 
 
+function filterByGenre(theBooks, genere ){
+
+  //i tried to use the filter method but i couldn't figure 
+  //how to filter a 2d array so i did this the easiest way 
+  //i knew how 
+
+  let ret = [] //theBooks.filter((theBooks) => theBooks[2] === genere);
+
+  for(let i =0;i<=theBooks.length -1 ;i++){    
+    if(theBooks[i].genre === genere){
+      ret.push(theBooks[i]);
+    }
+  }
+
+
+  return ret;
+}
+
+
+
 const books = [
   {
     title: "The Da Vinci Code",
@@ -28,7 +48,7 @@ const books = [
     genre: "mystery",
   },
   {
-    title: "To Kill a Mockingbird",
+    title: "To Kill a Mockingbird", //how is to kill a mocking bird a romance?
     author: "Harper Lee",
     genre: "romance",
   },
@@ -64,4 +84,10 @@ const books = [
   },
 ];
 
+
+document.getElementById("results").innerHTML = filterByGenre(books, document.getElementById("genre").textContent);
+
+//not sure why but the first time i ran it 
+//i had an array that just said object fill the
+//area but i havn't got the bug since the 1 time it happened
 
